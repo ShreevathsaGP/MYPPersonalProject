@@ -1,0 +1,120 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+.image
+{
+ 
+    background-image: url('scraper.jpg');
+    height: 100%;   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.indexbg{
+    background-color: gray;
+    
+}
+
+.content
+{
+    font-size: 20px;
+    text-align: center;
+    color:black;
+    padding: 16px;
+    width: 100%;
+    z-index: 1;
+}
+
+
+  
+  .index_text {
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-weight: bold;
+    border: 3px solid #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .result_text {
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    border: 3px solid #000000;
+    text-align: center;
+    padding: 20px;
+  }
+
+.warning{
+    color: red;
+}
+.table{
+    padding: 10px;
+    
+}
+
+.white{
+    color: white;
+}
+
+.tables{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+ header {
+
+    background-color: #363636;
+  }
+
+
+  .nav__links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+  }
+
+  .nav__links a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+    width: 25%;
+    padding: 150px
+
+  }
+
+  .nav__links li {
+    align-content: center;
+    text-align: center;
+    align-items: center;
+
+  }
+
+
+
+  .nav__links li a:hover {
+    color: #0088a9;
+  }

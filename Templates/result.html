@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scrape.it()</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="indexbg">
+<form method="POST">
+<header>
+  <nav>
+      <ul class="nav__links">
+          <li><a class="Pro_con" href="https://pypi.org/project/beautifulsoup4/" target="_blank"><font face="Times New Roman" size="3">DOWNLOAD MODULES USED</font></a></li>
+          <li><a class="index" href="http://127.0.0.1:5000/" ><font face="Times New Roman" size="3">HOME</font></a></li>
+          <li><a class="organization" href="https://github.com/ShreevathsaGP/Projects_Stuff" target="_blank"><font face="Times New Roman" size="3">VIEW MY GITHUB</a></li>
+      </ul>
+  </nav>
+</header>
+    <br>
+    <br>
+    <div class="container">
+        <div class="result_text">
+            <h1>Scrape.it()</h1>
+            <div class="warning">
+                <h3>WARNING: Due to some issue with the scraping software utilized in this web-application, the flipkart images will not be rendered. </h3>
+            </div>
+            <hr>
+            <p align=center>↓Here are the results from your scrape query↓</p>
+        </div>
+    </div>  
+
+
+    <div align="center">
+
+        <br>
+        <br>
+        <div class="tables">
+        <div class="white">
+        <h2>AMAZON DATA</h2>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Price(₹)</th>
+                    <th>Image(link)</th>
+                </tr>
+            </thead>
+                {% for x in amazon %}
+            <tbody>
+                <tr>
+                    <td>{{x[0][0:60]}}</td>
+                    <td>{{x[1]}}</td>
+                    <td><img src="{{x[2]}}" style=" max-width:100px; max-height:100px;"></td>
+                </tr>
+            </tbody>
+            
+            {% endfor %}
+
+        </table>
+
+        <br>
+        <br>
+
+        <div class="white">
+        <h2>FLIPKART DATA</h2>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Price(₹)</th>
+                    <th>Image(link)</th>
+                </tr>
+            </thead>
+                {% for x in flipkart %}
+            <tbody>
+                <tr>
+                    <td>{{x[0]}}</td>
+                    <td>{{x[1]}}</td>
+                    <td><img src="{{x[2]}}" style=" max-width:100px; max-height:100px;"></td>
+                </tr>
+            </tbody>
+            
+            {% endfor %}
+        </table>
+
+        <br>
+        <br>
+
+        <div class="white">
+        <h2>SNAPDEAL DATA</h2>
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Price(₹)</th>
+                    <th>Image(link)</th>
+                </tr>
+            </thread>
+                {% for x in snapdeal %}
+                    {% if x[2] == "None" %}
+            <tbody>
+                <tr>
+                    <td>{{x[0][0:60]}}</td>
+                    <td>{{x[1]}}</td>
+                    <td><p>Image Unavailable</p></td>
+                    {% else %}
+                <tr>
+                    <td>{{x[0][0:60]}}</td>
+                    <td>{{x[1]}}</td>
+                    <td><img src="{{x[2]}}" style=" max-width:100px; max-height:100px;"></td>
+                </tr>
+            </tbody>
+                
+                {% endif %}
+            {% endfor %}
+        </table>
+         </div>
+    </div>
+</form>
+</div>
+</body>
+</html>
